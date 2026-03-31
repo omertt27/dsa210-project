@@ -12,26 +12,27 @@ Social Media Use & Mental Health
 
 ## Motivation
 
-I spend a lot of time on social media and I've noticed it sometimes affects my mood and focus. I wanted to see if this is backed by data — specifically, whether people who use social media more also report worse mental health indicators like depression, anxiety, and sleep problems.
+I spend a lot of time on social media and I've noticed it sometimes affects my mood and focus. I wanted to see if this is actually backed by data — specifically, whether people who use social media more also report worse mental health indicators like depression, anxiety, and sleep problems.
 
 ---
 
-## Dataset
+## Data Sources
 
-**Source:** Kaggle – [Social Media and Mental Health](https://www.kaggle.com/datasets/souvikahmed071/social-media-and-mental-health)  
-**File:** `smmh.csv`
+**Primary dataset – Social Media & Mental Health Survey**  
+Source: Kaggle – [Social Media and Mental Health](https://www.kaggle.com/datasets/souvikahmed071/social-media-and-mental-health)  
+File: `smmh.csv` — real survey collected via Google Forms in April–May 2022, **481 responses**, 21 columns covering demographics, daily usage time, platforms used, and 12 mental health indicators rated on a 1–5 scale (distraction, restlessness, depression, anxiety, sleep issues, etc.).
 
-This is a real survey collected via Google Forms in April–May 2022, with **481 responses**. The survey has 21 questions covering:
+**Enrichment dataset – Sleep Health & Lifestyle**  
+Source: Kaggle – [Sleep Health and Lifestyle Dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)  
+File: `sleep_health.csv` — **374 records** with sleep duration, sleep quality (1–10), stress level (1–10), physical activity (min/day), BMI category, and sleep disorder diagnosis.
 
-- **Demographics:** age, gender, relationship status, occupation
-- **Usage:** average daily time on social media, platforms used
-- **Mental health indicators (1–5 scale):** purposeless use, distraction, restlessness, worry, difficulty concentrating, comparing to others, seeking validation, feeling depressed, sleep issues, and more
+**Planned enrichment:** The two datasets share demographic variables (age group, gender, occupation type). I will use these to join/merge representative sleep and stress statistics into the primary survey data, giving each respondent group an estimated sleep quality and stress context. This enriches the feature space and allows me to ask whether the mental health patterns in the social media survey align with known sleep/stress profiles from the lifestyle dataset.
 
 ---
 
 ## Planned Analysis
 
-1. **EDA:** Look at distributions of usage and mental health scores, check demographic breakdowns, and explore correlations between usage and well-being indicators.
+1. **EDA:** Distributions of usage and mental health scores, demographic breakdowns, correlations between usage and well-being indicators, enriched sleep/stress profiles per group.
 
 2. **Hypothesis Testing (4 hypotheses):**
    - H1: Heavy users (>3h/day) have higher mental health risk scores than light users
@@ -42,7 +43,7 @@ This is a real survey collected via Google Forms in April–May 2022, with **481
 3. **Machine Learning:**
    - Predict a user's overall mental health risk score (regression)
    - Classify users as high or low mental health risk (classification)
-   - Look at feature importance to see which survey answers matter most
+   - Feature importance analysis to identify the strongest predictors
 
 ---
 
