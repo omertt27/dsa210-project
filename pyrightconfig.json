@@ -1,0 +1,6 @@
+{
+  "exclude": ["**/*.ipynb"],
+  "reportMissingImports": "warning",
+  "reportUndefinedVariable": "warning",
+  "pythonVersion": "3.11"
+}

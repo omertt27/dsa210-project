@@ -40,8 +40,8 @@ COL_RENAME = {
     "14. Do you find it difficult to concentrate on things?": "difficulty_concentrating",
     "15. On a scale of 1-5, how often do you compare yourself to other successful people through the use of social media?": "compare_to_others",
     "16. Following the previous question, how do you feel about these comparisons, generally speaking?": "feeling_about_comparisons",
-    "17. How often do you look to seek validation (Likes, Comments etc) from social media?": "seek_validation",
-    "18. How often do you feel depressed or low?": "feel_depressed",
+    "17. How often do you look to seek validation from features of social media?": "seek_validation",
+    "18. How often do you feel depressed or down?": "feel_depressed",
     "19. On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate?": "interest_fluctuation",
     "20. On a scale of 1 to 5, how often do you face issues regarding sleep?": "sleep_issues",
 }

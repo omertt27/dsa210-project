@@ -87,8 +87,8 @@ Open and run:
 | Date | Milestone |
 |---|---|
 | Mar 17 | GitHub repo created ✅ |
-| Mar 31 | Proposal submitted |
-| Apr 14 | Data collection, EDA & hypothesis tests |
+| Mar 31 | Proposal submitted ✅ |
+| Apr 14 | Data collection, EDA & hypothesis tests ✅ |
 | May 5  | ML methods applied |
 | May 18 | Final report & code |
 
