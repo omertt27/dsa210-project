@@ -82,6 +82,39 @@ Open and run:
 
 ---
 
+## Machine Learning Methods
+
+The ML pipeline (`notebooks/03_ml_models.ipynb`) builds two complementary models on the cleaned survey data:
+
+### 1. Feature Engineering
+- **Target construction**: A composite **mental-health score** is derived from the 12 ordinal (1–5) indicators (anxiety, depression, distraction, sleep issues, etc.) and used as the regression target. A **binary high-risk label** (top tercile of the score) is used as the classification target.
+- **Predictors**: daily social-media usage hours, age, gender (one-hot), occupation/student status, and number of platforms used.
+- **Preprocessing**: numeric features are standardized with `StandardScaler` inside an sklearn `Pipeline`; categorical features are one-hot encoded.
+
+### 2. Models Trained
+| Task | Models |
+|---|---|
+| **Regression** (predict mental-health score) | Linear Regression, Ridge Regression, Random Forest Regressor |
+| **Classification** (predict high-risk vs. not) | Logistic Regression, Random Forest Classifier, Gradient Boosting Classifier |
+
+### 3. Evaluation Protocol
+- **Cross-validation**: 5-fold `KFold` for regression and 5-fold `StratifiedKFold` for classification, with a fixed `random_state` for reproducibility.
+- **Regression metrics**: Mean Absolute Error (MAE) and R².
+- **Classification metrics**: accuracy, precision/recall/F1 via `classification_report`, and a confusion matrix (`ConfusionMatrixDisplay`).
+- **Interpretability**: feature importances from the Random Forest models and coefficients from the linear/logistic baselines are plotted to identify which behaviors most strongly relate to mental-health outcomes.
+
+### 4. Outputs
+Generated figures are saved in `figures/`:
+- `reg_actual_vs_pred.png`, `reg_feature_importance.png` – regression diagnostics
+- `cls_confusion_matrix.png`, `cls_feature_importance.png` – classification diagnostics
+
+### 5. Key Findings (summary)
+- Daily usage hours and the composite "compulsive-use" indicators are the strongest predictors of the mental-health score.
+- Tree-based models (Random Forest / Gradient Boosting) outperform linear baselines, suggesting non-linear interactions between usage intensity, age, and student status.
+- Full numerical results and discussion are in the final report.
+
+---
+
 ## Timeline
 
 | Date | Milestone |
